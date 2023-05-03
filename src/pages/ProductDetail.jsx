@@ -12,6 +12,7 @@ import Evaluation from '../components/Evaluation';
 class ProductDetail extends Component {
   state = {
     productInfo: '',
+    freeShipping: false,
   };
 
   async componentDidMount() {
@@ -19,6 +20,7 @@ class ProductDetail extends Component {
     const productInfo = await getProductById(id);
     this.setState({
       productInfo,
+      freeShipping: productInfo.shipping.free_shipping,
     });
   }
 
@@ -41,7 +43,7 @@ class ProductDetail extends Component {
   render() {
     const { history: { goBack } } = this.props;
     const { match: { params: { id } } } = this.props;
-    const { productInfo } = this.state;
+    const { productInfo, freeShipping } = this.state;
     return (
       <div>
         <header>
@@ -69,6 +71,7 @@ class ProductDetail extends Component {
           >
             <AddShoppingCartIcon />
           </IconButton>
+          {freeShipping && <span data-testid="free-shipping">Frete Grátis</span>}
         </section>
         <section>
           <h2>Avaliações</h2>

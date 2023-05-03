@@ -40,6 +40,10 @@ class ProductItem extends Component {
         >
           <AddShoppingCartIcon />
         </IconButton>
+        {
+          product.shipping.free_shipping
+          && <span data-testid="free-shipping">Frete Grátis</span>
+        }
       </>
     );
   }
@@ -52,6 +56,9 @@ ProductItem.propTypes = {
     thumbnail: PropTypes.string,
     title: PropTypes.string,
     id: PropTypes.string,
+    shipping: PropTypes.shape({
+      free_shipping: PropTypes.bool,
+    }),
   }).isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,

@@ -21,3 +21,12 @@ export function getEvaFromStorage(id) {
   }
   return [];
 }
+
+export function setAmountOnStorage(quantity) {
+  localStorage.setItem('cartAmount', JSON.stringify(quantity));
+}
+
+export function getAmountFromStorage() {
+  const cartProducts = getProductsFromStorage();
+  return cartProducts.reduce(((acc, product) => acc + product.quantity), 0);
+}

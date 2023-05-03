@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 import ProductItem from '../components/ProductItem';
+import { getAmountFromStorage } from '../services/localStorage';
 
 class Home extends Component {
   state = {
@@ -12,12 +13,14 @@ class Home extends Component {
     queryValue: '',
     productsApi: [], // salva o retorno da api
     apiRequest: false,
+    amount: 0,
   };
 
   async componentDidMount() {
     const categoriesFromAPI = await getCategories();
     this.setState({
       categories: categoriesFromAPI,
+      amount: getAmountFromStorage(),
     });
   }
 
@@ -48,7 +51,7 @@ class Home extends Component {
   };
 
   render() {
-    const { queryValue, categories, productsApi, apiRequest } = this.state;
+    const { queryValue, categories, productsApi, apiRequest, amount } = this.state;
     return (
       <div>
         <header>
@@ -73,6 +76,11 @@ class Home extends Component {
           <Link to="/cart">
             <IconButton data-testid="shopping-cart-button">
               <ShoppingCart />
+              <span data-testid="shopping-cart-size">
+                {
+                  amount
+                }
+              </span>
             </IconButton>
           </Link>
         </header>

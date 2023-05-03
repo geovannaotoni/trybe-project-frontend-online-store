@@ -25,7 +25,9 @@ class Cart extends Component {
     const item = cartProducts.find((product) => product.id === id);
 
     if (operation === 'increase') {
-      item.quantity += 1;
+      if (item.quantity < item.available_quantity) {
+        item.quantity += 1;
+      }
     } else if (item.quantity > 1) {
       item.quantity -= 1;
     }

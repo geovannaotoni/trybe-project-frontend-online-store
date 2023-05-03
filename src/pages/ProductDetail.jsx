@@ -6,6 +6,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ReplyIcon from '@mui/icons-material/Reply';
 import { Link } from 'react-router-dom';
 import { getProductById } from '../services/api';
+import { getProductsFromStorage, setProductsOnStorage } from '../services/localStorage';
 
 class ProductDetail extends Component {
   state = {
@@ -19,6 +20,14 @@ class ProductDetail extends Component {
       productInfo,
     });
   }
+
+  addProductsToCart = (product) => {
+    const oldList = getProductsFromStorage();
+    const newList = [...oldList, { ...product, quantity: 1 }]; // recupera a lista antiga, acrescentando nela o novo produto
+    setProductsOnStorage(newList);
+    // const { history: { push } } = this.props;
+    // push('/cart');
+  };
 
   render() {
     const { history: { goBack } } = this.props;
@@ -45,8 +54,8 @@ class ProductDetail extends Component {
           <h3 data-testid="product-detail-price">{ productInfo.price }</h3>
           <h4>{ productInfo.warranty }</h4>
           <IconButton
-            data-testid="product-add-to-cart"
-            onClick={ () => {} }
+            data-testid="product-detail-add-to-cart"
+            onClick={ () => this.addProductsToCart(productInfo) }
           >
             <AddShoppingCartIcon />
           </IconButton>
@@ -59,6 +68,7 @@ class ProductDetail extends Component {
 ProductDetail.propTypes = {
   history: PropTypes.shape({
     goBack: PropTypes.func,
+    push: PropTypes.func,
   }).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({

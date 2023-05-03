@@ -3,8 +3,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { getProductsFromStorage, setProductsOnStorage } from '../services/localStorage';
 
 class ProductItem extends Component {
+  addProductsToCart = (product) => {
+    const oldList = getProductsFromStorage();
+    const newList = [...oldList, { ...product, quantity: 1 }];
+    setProductsOnStorage(newList);
+    // const { history: { push } } = this.props;
+    // push('/cart');
+  };
+
   render() {
     const { product } = this.props;
     return (
@@ -19,7 +28,7 @@ class ProductItem extends Component {
         </Link>
         <IconButton
           data-testid="product-add-to-cart"
-          onClick={ () => {} }
+          onClick={ () => this.addProductsToCart(product) }
         >
           <AddShoppingCartIcon />
         </IconButton>
@@ -35,6 +44,9 @@ ProductItem.propTypes = {
     thumbnail: PropTypes.string,
     title: PropTypes.string,
     id: PropTypes.string,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
   }).isRequired,
 };
 

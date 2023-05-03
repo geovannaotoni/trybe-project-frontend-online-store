@@ -8,8 +8,16 @@ import { getProductsFromStorage, setProductsOnStorage } from '../services/localS
 class ProductItem extends Component {
   addProductsToCart = (product) => {
     const oldList = getProductsFromStorage();
-    const newList = [...oldList, { ...product, quantity: 1 }];
-    setProductsOnStorage(newList);
+    const findProduct = oldList.find(({ id }) => product.id === id); // encontra o produto no carrinho, se ele já estiver salvo no localStorage
+    if (findProduct) {
+      const newQuantity = findProduct.quantity + 1;
+      const index = oldList.indexOf(findProduct);
+      oldList.splice(index, 1); // retira o produto já existente
+      setProductsOnStorage([...oldList, { ...product, quantity: newQuantity }]); // adiciona ele novamente com a nova quantidade
+    } else { // se nao estiver salvo no carrinho, cria uma nova lista e adiciona ele no final dela
+      const newList = [...oldList, { ...product, quantity: 1 }]; // // recupera a lista antiga, acrescentando nela o novo produto
+      setProductsOnStorage(newList);
+    }
     // const { history: { push } } = this.props;
     // push('/cart');
   };

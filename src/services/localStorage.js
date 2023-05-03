@@ -10,14 +10,14 @@ export function getProductsFromStorage() {
   return [];
 }
 
-export function setEvaOnStorage(id, avaliacao) {
-  localStorage.setItem(id, JSON.stringify(avaliacao));
+export function setEvaOnStorage(id, evaluations) {
+  localStorage.setItem(id, JSON.stringify(evaluations));
 }
 
 export function getEvaFromStorage(id) {
-  const avaliacao = JSON.parse(localStorage.getItem(id));
-  if (avaliacao) {
-    return avaliacao;
+  const evaluations = JSON.parse(localStorage.getItem(id));
+  if (evaluations) {
+    return evaluations;
   }
   return [];
 }

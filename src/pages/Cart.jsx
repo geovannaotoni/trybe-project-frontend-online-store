@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import ReplyIcon from '@mui/icons-material/Reply';
 import { Add, Remove, Clear } from '@mui/icons-material';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { getProductsFromStorage, setProductsOnStorage } from '../services/localStorage';
 
 class Cart extends Component {
@@ -88,6 +90,14 @@ class Cart extends Component {
             ))
           )
         }
+        <div>
+          <Link to="/checkout" data-testid="checkout-products">
+            <span>Finalizar Compras</span>
+            <IconButton>
+              <ShoppingCartCheckoutIcon />
+            </IconButton>
+          </Link>
+        </div>
       </section>
     );
   }

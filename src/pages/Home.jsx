@@ -4,6 +4,7 @@ import { ShoppingCart } from '@mui/icons-material';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
+import ProductItem from '../components/ProductItem';
 
 class Home extends Component {
   state = {
@@ -103,13 +104,11 @@ class Home extends Component {
           {!productsApi.length && apiRequest && <p>Nenhum produto foi encontrado</p>}
           {
             productsApi.map((product) => (
-              <article data-testid="product" key={ product.id }>
-                <h4>{product.title}</h4>
-                <img
-                  src={ product.thumbnail }
-                  alt={ product.name }
-                />
-                <h4>{product.price}</h4>
+              <article
+                data-testid="product"
+                key={ product.id }
+              >
+                <ProductItem product={ product } />
               </article>
             ))
           }

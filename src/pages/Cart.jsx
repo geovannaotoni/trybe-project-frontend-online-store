@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { IconButton } from '@mui/material';
+import ReplyIcon from '@mui/icons-material/Reply';
 
 class Cart extends Component {
   state = {
@@ -11,7 +13,9 @@ class Cart extends Component {
     const { history: { goBack } } = this.props;
     return (
       <section>
-        <button onClick={ () => goBack() }>Voltar</button>
+        <IconButton onClick={ () => goBack() }>
+          <ReplyIcon />
+        </IconButton>
         {
           !cartProducts.length && (
             <p data-testid="shopping-cart-empty-message">

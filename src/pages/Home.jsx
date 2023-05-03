@@ -77,9 +77,7 @@ class Home extends Component {
             <IconButton data-testid="shopping-cart-button">
               <ShoppingCart />
               <span data-testid="shopping-cart-size">
-                {
-                  amount
-                }
+                {amount}
               </span>
             </IconButton>
           </Link>

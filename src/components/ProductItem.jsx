@@ -3,21 +3,29 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { getProductsFromStorage, setProductsOnStorage } from '../services/localStorage';
+import {
+  getAmountFromStorage,
+  getProductsFromStorage,
+  setProductsOnStorage,
+} from '../services/localStorage';
 
 class ProductItem extends Component {
   addProductsToCart = (product) => {
     const oldList = getProductsFromStorage();
     const findProduct = oldList.find(({ id }) => product.id === id); // encontra o produto no carrinho, se ele já estiver salvo no localStorage
     if (findProduct) {
-      const newQuantity = findProduct.quantity + 1;
-      const index = oldList.indexOf(findProduct);
-      oldList.splice(index, 1); // retira o produto já existente
-      setProductsOnStorage([...oldList, { ...product, quantity: newQuantity }]); // adiciona ele novamente com a nova quantidade
+      if (findProduct.quantity < findProduct.available_quantity) {
+        const newQuantity = findProduct.quantity + 1;
+        const index = oldList.indexOf(findProduct);
+        oldList.splice(index, 1); // retira o produto já existente
+        setProductsOnStorage([...oldList, { ...product, quantity: newQuantity }]); // adiciona ele novamente com a nova quantidade
+      }
     } else { // se nao estiver salvo no carrinho, cria uma nova lista e adiciona ele no final dela
       const newList = [...oldList, { ...product, quantity: 1 }]; // // recupera a lista antiga, acrescentando nela o novo produto
       setProductsOnStorage(newList);
     }
+    const { updateAmount } = this.props;
+    updateAmount(getAmountFromStorage());
     // const { history: { push } } = this.props;
     // push('/cart');
   };
@@ -60,9 +68,10 @@ ProductItem.propTypes = {
       free_shipping: PropTypes.bool,
     }),
   }).isRequired,
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
+  updateAmount: PropTypes.func.isRequired,
+  // history: PropTypes.shape({
+  //   push: PropTypes.func,
+  // }).isRequired,
 };
 
 export default ProductItem;

@@ -50,6 +50,12 @@ class Home extends Component {
     });
   };
 
+  updateAmount = (newAmount) => {
+    this.setState({
+      amount: newAmount,
+    });
+  };
+
   render() {
     const { queryValue, categories, productsApi, apiRequest, amount } = this.state;
     return (
@@ -114,7 +120,7 @@ class Home extends Component {
                 data-testid="product"
                 key={ product.id }
               >
-                <ProductItem product={ product } />
+                <ProductItem product={ product } updateAmount={ this.updateAmount } />
               </article>
             ))
           }

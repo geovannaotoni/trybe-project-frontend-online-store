@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  align-items: center;
+  background-color: #41197f;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  height: 20vh;
+  justify-content: space-around;
+}
+
+header form {
+  width: 50%;
+}
+
+header form label {
+  display: flex;
+  justify-content: center;
+}
+
+header button {
+  background-color: #00d5e2;
+  border: 0;
+  border-radius: 0.2rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 0.6rem;
+  transition: box-shadow 0.2s ease;
+  width: 30%;
+}
+
+svg {
+  font-size: 50px;
+}
+
+section button {
+  background-color: #00d5e2;
+  border: 0;
+  border-radius: 0.2rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 0.6rem;
+  transition: box-shadow 0.2s ease;
+}
+
+header > a > button {
+  width: 100%;
+}
+
+header button:hover {
+  background-color: #19f4ff;
+  box-shadow: 0 0 0.2rem white;
+}
+
+header input {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 0.6rem;
+  width: 60%;
+}
+
+header div {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+header span {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+section {
+  align-items: center;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 19rem;
+  justify-content: space-between;
+  margin: 0.3rem;
+  padding: 2rem;
+  width: 270px;
+}
+
+section:hover {
+  box-shadow: 0 0 7px #0003;
+}
+
+section a {
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  text-align: center;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+}
+
+nav {
+  background-color: #e9f1f1;
+  width: 25vw;
+}
+
+nav p {
+  color: #00d5e2;
+  font-size: 2rem;
+  font-weight: 700;
+  height: 2rem;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+nav ul {
+  padding: 1rem 3rem;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75vw;
+}
+
+section button:hover {
+  background-color: #19f4ff;
+  box-shadow: 0 0 0.2rem #00d5e2;
+}
+
+section:hover a {
+  transform: scale(1.1);
+}

@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ECECEC;
+}
+
+header {
+  align-items: center;
+  background-color: #003be5;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  height: 20vh;
+  justify-content: space-around;
+}
+
+header input {
+  border: 0;
+  height: 2rem;
+  width: 18rem;
+}
+
+header span:first-child {
+  font-family: 'Epilogue';
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+header span:last-child {
+  color: #2fc18c;
+  font-family: 'Epilogue';
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.name {
+  display: flex;
+}
+
+.name > div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.size {
+  color: #2fc18c;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+header > form {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header > form > div:first-child {
+  flex-basis: 100%;
+  font-family: 'Epilogue';
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+main {
+  display: flex;
+}
+
+main > nav {
+  background-color: #FFFFFF;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
+  width: 20%;
+}
+
+main > nav > p {
+  color: #000000;
+  font-family: 'Epilogue';
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+main > nav > ul > li {
+  font-family: 'Epilogue';
+  font-size: 1.1rem;
+  list-style-type: none;
+  padding: 0.2rem;
+  padding-left: 0.7rem;
+}
+
+main > nav > ul > li:hover {
+  color: #003BE5;
+}
+
+/* main > nav > ul > li > label > input {
+  appearance: none;
+} */
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.products > section {
+  background: #FFFFFF;
+  box-shadow: 2.75926px 2.75926px 5.51852px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 22.5rem;
+  margin: 0.7rem;
+  padding: 0.7rem;
+  width: 17.5rem;
+}
+
+.products > section > a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #000000;
+  gap: 1rem;
+}
+
+.products > section > a:hover {
+  transform: scale(1.07);
+}
+
+.products > section > a > h4 {
+  text-align: center;
+  font-family: 'Epilogue';
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.products > section > a > h4:last-child {
+  font-family: 'Epilogue';
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #B0B3BB;
+}
+
+.products > section > a > h4:last-child > span {
+  color: #444955;
+  font-family: 'Epilogue';
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding-left: 0.5rem;
+}
+
+.btn-add-to-cart {
+  align-items: center;
+  background-color: #31C28D;
+  border: 0;
+  color: white;
+  display: flex;
+  font-family: 'Epilogue';
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.3rem;
+  width: 80%;
+  cursor: pointer;
+}
+
+.btn-add-to-cart:hover {
+  background-color: rgb(56, 224, 162);
+}
+
+.products > section {
+  position: relative;
+}
+
+.products > section > span:last-of-type {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #003BE5;
+  color: white;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+
+.products > p {
+  font-size: 2rem;
+  font-family: 'Epilogue';
+  color: rgb(56, 224, 162);
+  font-weight: 600;
+  text-transform: uppercase;
+}

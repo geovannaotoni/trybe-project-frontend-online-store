@@ -1,0 +1,65 @@
+.button-goback {
+  border: 0;
+  color: #2fc18c;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* .details > button:hover {
+  filter: drop-shadow(0 0 5px rgba(255, 252, 252, 0.9));
+  color: #40f7b4;
+} */
+
+.container-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details {
+  width: 70%;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.small {
+  width: 50%;
+}
+
+.details > h2 {
+  font-family: 'Epilogue';
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.details > img {
+  width: 10rem;
+}
+
+.details > h3 > span {
+  color: #444955;
+  font-family: 'Epilogue';
+  font-weight: 600;
+  font-size: 2.25rem;
+  padding-left: 0.5rem;
+}
+
+.details > h3 {
+  font-family: 'Epilogue';
+  font-weight: 400;
+  font-size: 2rem;
+  color: #B0B3BB;
+}
+
+.details > h4 {
+  font-family: 'Epilogue';
+  font-size: 1.25rem;
+}

@@ -35,19 +35,24 @@ class ProductItem extends Component {
     return (
       <>
         <Link to={ `/productDetail/${product.id}` } data-testid="product-detail-link">
-          <h4>{product.title}</h4>
           <img
             src={ product.thumbnail }
             alt={ product.name }
           />
-          <h4>{product.price}</h4>
+          <h4>{product.title}</h4>
+          <h4>
+            R$
+            <span>{product.price}</span>
+          </h4>
         </Link>
-        <IconButton
+        <button
           data-testid="product-add-to-cart"
           onClick={ () => this.addProductsToCart(product) }
+          className='btn-add-to-cart'
         >
+          Adicionar ao Carrinho
           <AddShoppingCartIcon />
-        </IconButton>
+        </button>
         {
           product.shipping.free_shipping
           && <span data-testid="free-shipping">Frete Grátis</span>

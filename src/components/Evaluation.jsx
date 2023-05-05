@@ -27,6 +27,20 @@ class Evaluation extends Component {
     });
   };
 
+  renderRating = (value) => {
+    const starFilled = '★';
+    const starEmpty = '☆';
+    let ratingHtml = '';
+    for (let i = 1; i <= 5; i += 1) {
+      if (i <= value) {
+        ratingHtml += starFilled;
+      } else {
+        ratingHtml += starEmpty;
+      }
+    }
+    return ratingHtml;
+  };
+
   handleClick = () => {
     const { id } = this.props;
     const { email, text, rating, evaluationList } = this.state;
@@ -136,7 +150,9 @@ class Evaluation extends Component {
             evaluationList.map((evaluation, index) => (
               <article key={ index }>
                 <p data-testid="review-card-email">{ evaluation.email }</p>
-                <p data-testid="review-card-rating">{ evaluation.rating }</p>
+                <p data-testid="review-card-rating" style={ { color: '#e58e09' } }>
+                  { this.renderRating(evaluation.rating) }
+                </p>
                 <p data-testid="review-card-evaluation">{ evaluation.text }</p>
                 <hr />
               </article>

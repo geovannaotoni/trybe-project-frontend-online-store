@@ -61,3 +61,8 @@
 .carrinho article > p:last-of-type {
   font-weight: 700;
 }
+
+.carrinho .p-empty {
+  text-align: center;
+  padding: 1rem;
+}

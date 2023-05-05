@@ -53,13 +53,13 @@ class ProductDetail extends Component {
   };
 
   render() {
-    const { history: { goBack } } = this.props;
+    const { history: { goBack, push } } = this.props;
     const { match: { params: { id } } } = this.props;
     const { productInfo, freeShipping, cartAmount } = this.state;
     return (
       <div>
         <header>
-          <div className="name">
+          <div className="name" onClick={ () => push('/') }>
             <ShoppingBasketIcon style={ { color: '#2FC18C', fontSize: '4rem' } } />
             <div>
               <span>FRONT-END</span>

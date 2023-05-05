@@ -82,7 +82,7 @@ class Cart extends Component {
             <p>Carrinho de Compras</p>
             {
               cartProducts.length === 0 ? (
-                <p data-testid="shopping-cart-empty-message">
+                <p data-testid="shopping-cart-empty-message" className="p-empty">
                   Seu carrinho está vazio
                 </p>
               ) : (

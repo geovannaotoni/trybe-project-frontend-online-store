@@ -75,7 +75,7 @@ class ProductDetail extends Component {
             </IconButton>
           </Link>
         </header>
-        <button onClick={ () => goBack() } className='button-goback'>
+        <button onClick={ () => goBack() } className="button-goback">
           <ReplyIcon style={ { color: '#2FC18C', fontSize: '2rem' } } />
           <span>Voltar</span>
         </button>

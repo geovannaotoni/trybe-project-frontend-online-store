@@ -13,28 +13,33 @@
 } */
 
 .container-details {
+  justify-content: space-around;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.details {
-  width: 70%;
+.details, .evaluations {
   background: #FFFFFF;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
   padding: 2rem;
-  margin: 1rem;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 
-.small {
-  width: 50%;
+.details {
+  min-height: 70vh;
+  width: 40%;
+  justify-content: space-around;
 }
 
-.details > h2 {
+.small {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.details > h2, .evaluations > h2 {
   font-family: 'Epilogue';
   font-size: 2.5rem;
   text-align: center;
@@ -62,4 +67,68 @@
 .details > h4 {
   font-family: 'Epilogue';
   font-size: 1.25rem;
+}
+
+.evaluations {
+  width: 50%;
+  height: 75vh;
+}
+
+.evaluations > div {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.evaluations > div > input {
+  width: 75%;
+}
+
+.rating {
+  width: 20%;
+}
+
+.evaluations > textarea {
+  resize: none;
+  width: 90%;
+}
+
+.evaluations button {
+  background-color: #31C28D;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-family: 'Epilogue';
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  width: 30%;
+}
+
+.evaluations section {
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.evaluations section > article {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.evaluations hr {
+  flex-basis: 100%;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.evaluations section > article > p:first-of-type {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.evaluations section > article > p:last-of-type {
+  color: rgb(109, 112, 117);
+  flex-basis: 100%;
 }

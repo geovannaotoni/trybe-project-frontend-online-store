@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { IconButton } from '@mui/material';
+// import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {
   getAmountFromStorage,
@@ -48,7 +48,7 @@ class ProductItem extends Component {
         <button
           data-testid="product-add-to-cart"
           onClick={ () => this.addProductsToCart(product) }
-          className='btn-add-to-cart'
+          className="btn-add-to-cart"
         >
           Adicionar ao Carrinho
           <AddShoppingCartIcon />

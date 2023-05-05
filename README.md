@@ -10,3 +10,5 @@ Acesse a página aqui:
 Feito a partir dos conhecimentos de CSS, HTML, JavaScript, JSX, React e React Router Dom, Componentes de Classe, PropTypes, NPM e Requisições via API.
 
 https://www.figma.com/file/E3KIkTRcdEnF30cKEqKFjn/%5BProjeto%5D%5BFrontend%5D-Front-end-Online-Store?type=design&node-id=0-1&t=TTZga3nhnBWLG2rw-0
+
+https://nekocalc.com/px-to-rem-converter

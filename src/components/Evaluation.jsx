@@ -57,67 +57,69 @@ class Evaluation extends Component {
   render() {
     const { email, text, evaluationList, invalidFields } = this.state;
     return (
-      <div>
-        <input
-          type="email"
-          name="email"
-          data-testid="product-detail-email"
-          placeholder="Digite seu e-mail aqui"
-          onChange={ this.handleChange }
-          value={ email }
-        />
-        {/* https://uiverse.io/andrew-demchenk0/clever-elephant-35 */}
-        <div className="rating">
+      <>
+        <div>
           <input
-            type="radio"
-            id="star5"
-            name="rating"
-            value="5"
-            data-testid="5-rating"
+            type="email"
+            name="email"
+            data-testid="product-detail-email"
+            placeholder="Digite seu e-mail aqui"
             onChange={ this.handleChange }
+            value={ email }
           />
-          <label htmlFor="star5">★</label>
-          <input
-            type="radio"
-            id="star4"
-            name="rating"
-            value="4"
-            data-testid="4-rating"
-            onChange={ this.handleChange }
-          />
-          <label htmlFor="star4">★</label>
-          <input
-            type="radio"
-            id="star3"
-            name="rating"
-            value="3"
-            data-testid="3-rating"
-            onChange={ this.handleChange }
-          />
-          <label htmlFor="star3">★</label>
-          <input
-            type="radio"
-            id="star2"
-            name="rating"
-            value="2"
-            data-testid="2-rating"
-            onChange={ this.handleChange }
-          />
-          <label htmlFor="star2">★</label>
-          <input
-            type="radio"
-            id="star1"
-            name="rating"
-            value="1"
-            data-testid="1-rating"
-            onChange={ this.handleChange }
-          />
-          <label htmlFor="star1">★</label>
+          {/* https://uiverse.io/andrew-demchenk0/clever-elephant-35 */}
+          <div className="rating">
+            <input
+              type="radio"
+              id="star5"
+              name="rating"
+              value="5"
+              data-testid="5-rating"
+              onChange={ this.handleChange }
+            />
+            <label htmlFor="star5">★</label>
+            <input
+              type="radio"
+              id="star4"
+              name="rating"
+              value="4"
+              data-testid="4-rating"
+              onChange={ this.handleChange }
+            />
+            <label htmlFor="star4">★</label>
+            <input
+              type="radio"
+              id="star3"
+              name="rating"
+              value="3"
+              data-testid="3-rating"
+              onChange={ this.handleChange }
+            />
+            <label htmlFor="star3">★</label>
+            <input
+              type="radio"
+              id="star2"
+              name="rating"
+              value="2"
+              data-testid="2-rating"
+              onChange={ this.handleChange }
+            />
+            <label htmlFor="star2">★</label>
+            <input
+              type="radio"
+              id="star1"
+              name="rating"
+              value="1"
+              data-testid="1-rating"
+              onChange={ this.handleChange }
+            />
+            <label htmlFor="star1">★</label>
+          </div>
         </div>
         <textarea
           name="text"
-          cols="30"
-          rows="10"
+          cols="50"
+          rows="7"
           data-testid="product-detail-evaluation"
           onChange={ this.handleChange }
           value={ text }
@@ -136,11 +138,12 @@ class Evaluation extends Component {
                 <p data-testid="review-card-email">{ evaluation.email }</p>
                 <p data-testid="review-card-rating">{ evaluation.rating }</p>
                 <p data-testid="review-card-evaluation">{ evaluation.text }</p>
+                <hr />
               </article>
             ))
           }
         </section>
-      </div>
+      </>
     );
   }
 }

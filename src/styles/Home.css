@@ -39,6 +39,7 @@ header span:last-child {
 
 .name {
   display: flex;
+  cursor: pointer;
 }
 
 .name > div {
@@ -160,7 +161,9 @@ main > nav > ul > li:hover {
   align-items: center;
   background-color: #31C28D;
   border: 0;
+  border-radius: 0.3rem;
   color: white;
+  cursor: pointer;
   display: flex;
   font-family: 'Epilogue';
   font-size: 0.9rem;
@@ -169,7 +172,6 @@ main > nav > ul > li:hover {
   justify-content: center;
   padding: 0.3rem;
   width: 80%;
-  cursor: pointer;
 }
 
 .btn-add-to-cart:hover {

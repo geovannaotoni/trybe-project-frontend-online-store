@@ -1,0 +1,63 @@
+.carrinho {
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  font-family: 'Epilogue';
+  margin: 1rem 5rem;
+  padding: 3rem;
+}
+
+.carrinho > p:first-of-type {
+  font-family: 'Epilogue';
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.carrinho article {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.carrinho article hr {
+  flex-basis: 100%;
+  margin: 1rem 0;
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+}
+
+.operations > p {
+  background-color: #B0B3BB;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 2rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 2rem;
+}
+
+.carrinho a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.carrinho a > button {
+  width: 50%;
+}
+
+.carrinho article > p:first-of-type {
+  text-align: center;
+  width: 40%;
+}
+
+.carrinho article > p:last-of-type {
+  font-weight: 700;
+}

@@ -29,9 +29,10 @@
 }
 
 .details {
-  min-height: 70vh;
-  width: 40%;
   justify-content: space-around;
+  min-height: 70vh;
+  position: relative;
+  width: 40%;
 }
 
 .small {
@@ -43,6 +44,7 @@
   font-family: 'Epilogue';
   font-size: 2.5rem;
   text-align: center;
+  padding-top: 0.5rem;
 }
 
 .details > img {
@@ -131,4 +133,17 @@
 .evaluations section > article > p:last-of-type {
   color: rgb(109, 112, 117);
   flex-basis: 100%;
+}
+
+.details > span:last-of-type {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #003BE5;
+  color: white;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 0.25rem;
 }

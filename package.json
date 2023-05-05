@@ -6,6 +6,8 @@
     "node": "16 || 18"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -43,10 +45,6 @@
     ]
   },
   "devDependencies": {
-    "@trybe/eslint-config-frontend": "^1.7.1",
-    "prop-types": "^15.8.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^28.0.0",
-    "stylelint-order": "^5.0.0"
+    "prop-types": "^15.8.1"
   }
 }
